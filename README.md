@@ -10,15 +10,21 @@ Username: emilys
 Password: emilyspass
 
 
-
 ## Features
 - JWT-based login authentication
 - Profile page with user details & logout
 - Users page with search functionality
-- Products page
+- Products page with price sorting
 - Protected routes using Angular Guards
+- Global state management using **NgRx**
+- Toast notifications using **PrimeNG Toast**
+- Icons implemented using **PrimeNG Icons**
 - Navigation bar (Profile, Users, Products)
 - UI implemented as per provided Figma design
+
+## Libraries Used
+- **NgRx** – state management
+- **PrimeNG** – toast messages & icons
 
 ## APIs Used
 - POST https://dummyjson.com/auth/login
@@ -29,9 +35,11 @@ Password: emilyspass
 ## Tech Stack
 - Angular
 - TypeScript
+- NgRx
+- PrimeNG
 - HTML & CSS
 - DummyJSON API
 - Netlify (Hosting)
 
 ## Live URL
-👉 https://webplat-assignment.netlify.app
+👉 https://webplat-assignment.netlify.app/
