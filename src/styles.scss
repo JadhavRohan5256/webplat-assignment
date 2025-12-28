@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Rubik:wght@300;400&display=swap');
+@import "primeicons/primeicons.css";
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1985B5;
+    --secondary-color: #03DAC5;
+    --brand-color: #ff5902;
+    --brand-surface: #ffebe1;
+    --danger-color: #B91C1C;
+    --success-bg-surface: #b8f1cf;
+    --success-color: #00a945;
+    --poppins: 'Poppins', sans-serif, Arial;
+    --rubik: 'Rubik', sans-serif, Arial;
+    --border-radius-s: 5px !important;
+    --border-radius-m: 15px !important;
+    --border-radius-lg: 30px !important;
+    --border-hover-color: #1e88e5;
+    --error-bg-surface: #ffecec;
+    --error-color: #B91C1C;
+
+
+    --bg-color: #f4f2ee;
+    --bg-surface-color: #ffffff;
+    --bg-surface-hover: rgba(0, 0, 0, 0.1);
+    --text-color: #212121;
+    --text-color-second: #9CA3AF;
+    --border-color: #2f2b3d29;
+    --font-weight-normal: 400;
+    --font-weight-heading: 500;
+    --box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+    --border: 1px solid var(--border-color);
+}
+
+body {
+    font-family: var(--rubik);
+    background-color: var(--bg-color);
+}

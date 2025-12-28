@@ -1,0 +1,43 @@
+<div class="login-wrapper">
+    <div class="logo-section">
+        <img src="../../../assets/images/logo.png" alt="Brand Logo" />
+    </div>
+
+    <div class="login-card">
+        <div class="card-header">
+            <h1 class="title">WELCOME BACK</h1>
+            <p class="subtitle">Please login to your account</p>
+        </div>
+
+        <form class="login-form">
+            <div class="input-group">
+                <span class="pi pi-user"></span>
+                <input type="text" placeholder="USERNAME" class="form-input" aria-label="Username">
+            </div>
+
+            <div class="input-group">
+                <span class="pi pi-lock"></span>
+                <input type="password" placeholder="PASSWORD" class="form-input" aria-label="Password">
+            </div>
+
+            <div class="form-options">
+                <label class="checkbox-container">
+                    <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Remember Me</span>
+                </label>
+                <a href="javascript:void(0)" (click)="onForgotPassword()" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <button type="button" (click)="onLogin()" class="login-btn">
+                <span class="pi pi-sign-in"></span>
+                LOGIN
+            </button>
+
+            <div class="signup-footer">
+                Don't have an account? <a href="javascript:void(0)" (click)="onSignUp()" class="signup-link">Sign
+                    up.</a>
+            </div>
+        </form>
+    </div>
+</div>
