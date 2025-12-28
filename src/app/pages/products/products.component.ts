@@ -33,4 +33,8 @@ export class ProductsComponent implements OnInit {
     this.pageTitleService.setTitle('Products');
     this.store.dispatch(loadProducts());
   }
+
+  trackById(index: number, item: Product): number {
+    return item.id;
+  }
 }

@@ -24,7 +24,7 @@
                 <ng-container *ngIf="users$ | async as users">
                     <ng-container *ngIf="apiStatus$ | async as apiStatus">
 
-                        <tr *ngFor="let user of users; let i = index">
+                        <tr *ngFor="let user of users; trackBy: trackById; let i = index">
                             <td>{{ user.id }}</td>
                             <td>{{ user.firstName }}</td>
                             <td>{{ user.lastName }}</td>

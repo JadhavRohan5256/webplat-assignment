@@ -32,4 +32,8 @@ export class UsersComponent implements OnInit {
         this.pageTitleService.setTitle('Users');
         this.store.dispatch(loadUsers());
     }
+
+    trackById(index: number, item: User): number {
+        return item.id;
+    }
 }

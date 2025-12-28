@@ -19,7 +19,7 @@
             <tbody>
                 <ng-container *ngIf="products$ | async as products">
                     <ng-container *ngIf="apiStatus$ | async as apiStatus">
-                        <tr *ngFor="let product of products; let i = index">
+                        <tr *ngFor="let product of products; trackBy: trackById; let i = index">
                             <td>{{ product.id }}</td>
                             <td>{{ product.title }}</td>
                             <td class="description-col">
