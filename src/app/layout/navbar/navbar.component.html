@@ -9,9 +9,15 @@
             <span class="notification-dot"></span>
         </div>
 
-        <div class="profile-wrapper">
-            <img [src]="userInfo?.image" alt="Profile" class="header-avatar" />
+        <div class="profile-wrapper" *ngIf="userInfo$ | async as userInfo">
+            <img [src]="userInfo.image" alt="Profile" class="header-avatar" />
         </div>
+
+        <ng-container *ngIf="apiStatus$ | async as apiStatus">
+            <div class="loader-container">
+                <app-loader *ngIf="apiStatus === 'loading'" [size]="40"></app-loader>
+            </div>
+        </ng-container>
     </div>
 
     <div class="decoration">

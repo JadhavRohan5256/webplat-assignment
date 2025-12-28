@@ -1,0 +1,99 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.304);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background: var(--bg-surface-color);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    animation: fadeInScale 0.25s ease-out;
+}
+
+.modal-header {
+    background-color: var(--decoration-dark);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        background-color: #EF4444;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+        position: absolute;
+        bottom: -40px;
+
+        .pi-trash {
+            color: white;
+            font-size: 24px;
+        }
+    }
+}
+
+.modal-body {
+    padding: 60px 40px 40px;
+    text-align: center;
+
+    h3 {
+        color: #111827;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: var(--text-color-second);
+        font-weight: var(--font-weight-normal);
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .logout-btn {
+        width: 200px;
+        padding: 14px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: var(--font-weight-heading);
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

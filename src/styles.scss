@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&family=Rubik:wght@300;400&display=swap');
 @import "primeicons/primeicons.css";
+@import "primeng/resources/themes/md-light-indigo/theme.css";
+@import "primeng/resources/primeng.css";
 
 *,
 *::after,
@@ -45,4 +47,11 @@
 body {
     font-family: var(--rubik);
     background-color: var(--bg-color);
+}
+
+.loader-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

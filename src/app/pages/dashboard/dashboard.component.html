@@ -1,4 +1,4 @@
-<ng-container *ngIf="userInfo">
+<ng-container *ngIf="userInfo$ | async as userInfo">
     <div class="dashboard-container">
         <div class="welcome-card-outer">
             <div class="welcome-card-inner">
@@ -33,18 +33,17 @@
                 </div>
 
                 <div class="card-visuals">
-                    <svg class="decoration-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 0 Q 80 100 150 150 T 200 200" stroke="#0EA5E9" stroke-width="2"
-                            stroke-opacity="0.5" fill="none" />
-                        <path d="M80 0 Q 110 80 180 130 T 220 180" stroke="#0EA5E9" stroke-width="2"
-                            stroke-opacity="0.3" fill="none" />
-                    </svg>
-
                     <div class="avatar-container">
                         <img [src]="userInfo.image" alt="User Avatar" class="dashboard-avatar" />
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="apiStatus$ | async as apiStatus">
+    <div class="loader-container">
+        <app-loader *ngIf="apiStatus === 'loading'" [size]="80"></app-loader>
     </div>
 </ng-container>

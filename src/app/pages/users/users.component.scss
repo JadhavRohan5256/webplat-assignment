@@ -50,18 +50,6 @@
             color: var(--text-color);
             border-bottom: none;
             white-space: nowrap;
-
-            // &:first-child {
-            //     padding-left: 20px;
-            //     border-top-left-radius: 8px;
-            //     border-bottom-left-radius: 8px;
-            // }
-
-            // &:last-child {
-            //     padding-right: 20px;
-            //     border-top-right-radius: 8px;
-            //     border-bottom-right-radius: 8px;
-            // }
         }
     }
 
@@ -145,4 +133,11 @@
             text-decoration: underline;
         }
     }
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+    font-size: 13px;
 }

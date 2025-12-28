@@ -25,6 +25,7 @@
     padding: 40px 50px;
     width: 100%;
     max-width: 450px;
+    position: relative;
     // border: 1px solid rgba(220, 38, 38, 0.1);
 }
 
@@ -149,11 +150,6 @@
     justify-content: center;
     gap: 8px;
     box-shadow: 0 4px 6px rgba(29, 155, 240, 0.2);
-    transition: transform 0.1s;
-
-    &:active {
-        transform: scale(0.98);
-    }
 }
 
 .pi-sign-in {

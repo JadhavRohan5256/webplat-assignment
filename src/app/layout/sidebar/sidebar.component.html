@@ -22,11 +22,9 @@
 
     <nav class="bottom-nav">
         <ul>
-            <li *ngFor="let item of bottomItems">
-                <a href="#">
-                    <span [class]="item.icon"></span>
-                    <span>{{ item.label }}</span>
-                </a>
+            <li *ngFor="let item of bottomItems" (click)="item.action()">
+                <span [class]="item.icon"></span>
+                <span>{{ item.label }}</span>
             </li>
         </ul>
     </nav>

@@ -58,5 +58,11 @@
                     up.</a>
             </div>
         </form>
+
+        <ng-container *ngIf="apiStatus$ | async as apiStatus">
+            <div class="loader-container" *ngIf="apiStatus === 'loading'">
+                <app-loader [size]="50"></app-loader>
+            </div>
+        </ng-container>
     </div>
 </div>

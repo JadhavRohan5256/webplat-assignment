@@ -17,20 +17,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products; let i = index">
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.title }}</td>
-                    <td class="description-col">
-                        <app-read-more [text]="product.description" [limit]="60"></app-read-more>
-                    </td>
-                    <td>{{ product.category }}</td>
-                    <td>{{ product.price | currency }}</td>
-                    <td class="image-col">
-                        <div class="icon-box">
-                            <span class="pi pi-image"></span>
-                        </div>
-                    </td>
-                </tr>
+                <ng-container *ngIf="products$ | async as products">
+                    <ng-container *ngIf="apiStatus$ | async as apiStatus">
+                        <tr *ngFor="let product of products; let i = index">
+                            <td>{{ product.id }}</td>
+                            <td>{{ product.title }}</td>
+                            <td class="description-col">
+                                <app-read-more [text]="product.description" [limit]="60"></app-read-more>
+                            </td>
+                            <td>{{ product.category }}</td>
+                            <td>{{ product.price | currency }}</td>
+                            <td class="image-col">
+                                <div class="icon-box">
+                                    <span class="pi pi-image"></span>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr *ngIf="apiStatus === 'success' && products.length === 0">
+                            <td colspan="6" class="no-data">No products found</td>
+                        </tr>
+
+                        <tr *ngIf="apiStatus === 'loading'">
+                            <div class="loader-container">
+                                <app-loader [size]="50"></app-loader>
+                            </div>
+                        </tr>
+                    </ng-container>
+                </ng-container>
             </tbody>
         </table>
     </div>
