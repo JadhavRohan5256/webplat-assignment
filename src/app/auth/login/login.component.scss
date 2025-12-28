@@ -1,7 +1,7 @@
 :host {
     display: block;
     min-height: 100vh;
-    background-color: #F8FAFC;
+    background-color: var(--bg-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,13 +20,12 @@
 }
 
 .login-card {
-    background: var(--bg-surface-color);
+    background: linear-gradient(180deg, var(--bg-surface-color) 0%, var(--bg-surface-color) 45%, var(--bg-color) 100%);
     border-radius: var(--border-radius-m);
     padding: 40px 50px;
     width: 100%;
     max-width: 450px;
-    box-shadow: var(--box-shadow);
-    border: 1px solid rgba(220, 38, 38, 0.1);
+    // border: 1px solid rgba(220, 38, 38, 0.1);
 }
 
 .card-header {

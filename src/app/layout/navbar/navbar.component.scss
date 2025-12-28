@@ -1,0 +1,101 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.top-header {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background-color: var(--bg-surface-color);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+
+    .page-title {
+        h1 {
+            font-size: 18px;
+            font-weight: var(--font-weight-heading);
+            color: var(--text-color);
+        }
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .notification-wrapper {
+        position: relative;
+        cursor: pointer;
+
+        .pi-bell {
+            font-size: 22px;
+            color: #312E81;
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: -2px;
+            right: -1px;
+            width: 8px;
+            height: 8px;
+            background-color: #DC2626;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+    }
+
+    .profile-wrapper {
+        .header-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+}
+
+.decoration {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transform: rotate(2deg);
+
+    .decoration-wrapper {
+        position: relative;
+
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            clip-path: polygon(17% 16%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        }
+
+        .decoration-light {
+            right: 70px;
+            top: 20px;
+            background-color: var(--decoration-light);
+        }
+
+        .decoration-dark {
+            right: 0;
+            top: -10px;
+            background-color: var(--decoration-dark);
+        }
+
+        .dashboard {
+            background-color: var(--decoration-light);
+        }
+    }
+}

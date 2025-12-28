@@ -1,0 +1,13 @@
+.view-more {
+    color: var(--text-color);
+    font-weight: var(--font-weight-heading);
+    font-family: var(--poppins);
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 13px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

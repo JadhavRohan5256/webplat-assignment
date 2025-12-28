@@ -1,0 +1,107 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-surface-color);
+    border-right: var(--border);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 20px;
+    box-shadow: var(--box-shadow);
+
+    .logo-section {
+        width: 100%;
+        padding-bottom: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-nav {
+        li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        a {
+            display: block;
+            padding: 15px 0 15px 30px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: var(--font-weight-heading);
+            font-size: 15px;
+            transition: all 0.2s;
+            border-bottom-right-radius: 30px;
+
+            &.active {
+                background-color: var(--primary-color);
+                color: white;
+            }
+
+            &:hover:not(.active) {
+                background-color: var(--bg-surface-hover);
+            }
+        }
+    }
+
+    .bottom-nav {
+        margin-top: auto;
+        padding-bottom: 30px;
+        padding-left: 30px;
+
+        li {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-color-second);
+            font-size: 14px;
+            font-weight: var(--font-weight-heading);
+
+            span {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.decoration {
+    position: fixed;
+    left: -146px;
+    bottom: 411px;
+    transform: rotate(8deg);
+
+    .decoration-wrapper {
+        position: relative;
+
+        div {
+            position: absolute;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+        }
+
+        .decoration-light {
+            width: 300px;
+            height: 300px;
+            top: 0;
+            left: 0;
+            background-color: var(--decoration-light);
+        }
+
+        .decoration-dark {
+            margin: 50px;
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            background-color: var(--decoration-dark);
+        }
+    }
+}

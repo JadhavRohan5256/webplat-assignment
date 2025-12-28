@@ -1,0 +1,23 @@
+<header class="top-header">
+    <div class="page-title">
+        <h1>{{ pageTitle$ | async }}</h1>
+    </div>
+
+    <div class="header-right">
+        <div class="notification-wrapper">
+            <span class="pi pi-bell"></span>
+            <span class="notification-dot"></span>
+        </div>
+
+        <div class="profile-wrapper">
+            <img src="https://i.pravatar.cc/150?img=5" alt="Profile" class="header-avatar" />
+        </div>
+    </div>
+
+    <div class="decoration">
+        <div class="decoration-wrapper">
+            <div class="decoration-light"></div>
+            <div class="decoration-dark" [class.dashboard]="isDashboard$ | async"></div>
+        </div>
+    </div>
+</header>

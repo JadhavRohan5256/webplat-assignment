@@ -1,0 +1,4 @@
+<p>{{ displayText }}</p>
+<a *ngIf="shouldShowToggle" href="javascript:void(0)" class="view-more" (click)="toggle()">
+    {{ isExpanded ? 'View Less' : 'View More' }}
+</a>

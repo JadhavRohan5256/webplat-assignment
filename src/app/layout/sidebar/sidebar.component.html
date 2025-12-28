@@ -1,0 +1,33 @@
+<aside class="sidebar">
+    <div class="logo-section">
+        <img src="../../../assets/images/logo.png" alt="Brand Logo" />
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li *ngFor="let item of menuItems">
+                <a [routerLink]="item.link" routerLinkActive="active">
+                    {{ item.label }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="decoration">
+        <div class="decoration-wrapper">
+            <div class="decoration-light"></div>
+            <div class="decoration-dark"></div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <ul>
+            <li *ngFor="let item of bottomItems">
+                <a href="#">
+                    <span [class]="item.icon"></span>
+                    <span>{{ item.label }}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
