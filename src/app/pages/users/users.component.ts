@@ -1,31 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageTitleService } from 'src/app/shared/services/page-title.service';
+import { UsersService } from 'src/app/shared/services/users.service';
+import { HttpClientModule } from '@angular/common/http';
+import { User } from 'src/app/shared/models/dashboard.model';
 
 @Component({
     selector: 'app-users',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, HttpClientModule],
     templateUrl: './users.component.html',
-    styleUrls: ['./users.component.scss']
+    styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-    users = [
-        { id: 1, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 2, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 3, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 4, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 5, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 6, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 7, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' },
-        { id: 8, firstName: 'John', lastName: 'Deo', gender: 'Male', email: 'johndeo.gmail.com', phone: '9890989098', birthDate: '07/08/1999', image: 'assets/images/user.png' }
-    ];
+    users: User[] = [];
 
     constructor(
-        private pageTitleService: PageTitleService
+        private pageTitleService: PageTitleService,
+        private usersService: UsersService
     ) { }
 
     ngOnInit() {
         this.pageTitleService.setTitle('Users');
+        this.getAllUsers();
+    }
+
+    private getAllUsers(): void {
+        this.usersService.getAllUsers().subscribe({
+            next: (response: User[]) => {
+                this.users = response;
+            },
+            error: (error) => {
+                console.error('Error fetching users:', error);
+            }
+        });
     }
 }
